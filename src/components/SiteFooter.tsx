@@ -22,7 +22,7 @@ export function SiteFooter({ clearBottomDock = false }: SiteFooterProps) {
           <div className="w-12 h-12 rounded-full overflow-hidden border border-[#4ADE80]/45 bg-[#050C09] shrink-0">
             {!avatarError ? (
               <img
-                src="/assets/aistudio/IMG_0239_0d718059.jpg"
+                src="./assets/aistudio/IMG_0239_0d718059.jpg"
                 alt="Josh Michael Quincena"
                 referrerPolicy="no-referrer"
                 onError={() => setAvatarError(true)}

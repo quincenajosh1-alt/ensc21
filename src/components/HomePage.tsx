@@ -42,7 +42,7 @@ export function HomePage({
           <div className="relative w-full min-h-[380px] sm:min-h-[440px] lg:min-h-[500px] rounded-xl overflow-hidden border border-[#5EEAD4]/20 bg-[#050C09] flex items-center">
             {!heroError ? (
               <img
-                src="/src/assets/images/homepage_observatory_landscape_1795625033865.jpg"
+                src="./src/assets/images/homepage_observatory_landscape_1795625033865.jpg"
                 alt="Panoramic nocturnal landscape featuring a modern skyline, suspension bridge, high-altitude research aircraft, and hillside observatory dome under a starry sky."
                 referrerPolicy="no-referrer"
                 onError={() => setHeroError(true)}
