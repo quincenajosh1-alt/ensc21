@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #050C09;
+    color: #F2F5F0;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(155deg, #050C09 0%, #07160F 52%, #0A2016 100%);
+    color: #F2F5F0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.005em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Soft pulse for the first available observatory marker */
+@keyframes mintMarkerPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55);
+  }
+  65% {
+    box-shadow: 0 0 0 12px rgba(74, 222, 128, 0);
+  }
+}
+
+.marker-soft-pulse {
+  animation: mintMarkerPulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marker-soft-pulse {
+    animation: none;
+  }
+}
+
+/* Brief scene cross-fade */
+@keyframes sceneReveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scene-transition {
+  animation: sceneReveal 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Observatory dark-theme range slider */
+input[type="range"].obs-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(149, 172, 160, 0.24);
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"].obs-slider:focus-visible {
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.35);
+}
+
+input[type="range"].obs-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #4ADE80;
+  border: 2.5px solid #050C09;
+  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.6), 0 2px 8px rgba(0, 0, 0, 0.45);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}
+
+input[type="range"].obs-slider::-webkit-slider-thumb:hover {
+  background: #86EFAC;
+  transform: scale(1.08);
+}
+
+input[type="range"].obs-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #4ADE80;
+  border: 2.5px solid #050C09;
+  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.6), 0 2px 8px rgba(0, 0, 0, 0.45);
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease;
+}

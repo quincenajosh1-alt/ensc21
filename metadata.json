@@ -1,0 +1,6 @@
+{
+  "name": "DEs in the Wild",
+  "description": "An illustrated engineering field guide to ordinary differential equations in everyday systems, featuring interactive scenes, a skyscraper damping simulation, and a structured chapter index.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
